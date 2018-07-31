@@ -1,0 +1,25 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "url": "/Login",
+            "linktext": "LET’S GET STARTED",
+            "heading": "You're here!",
+            "indextext": "Now that the obvious is out of the way, let’s help you get to know your new  home here at"
+        },
+        {
+            "id": "2",
+            "url": "/Intro",
+            "linktext": "LET’S GET STARTED",
+            "heading": "You're here!",
+            "indextext": "Now that the obvious is out of the way, let’s help you get to know your new  home here at 22feet We’ve designed a few tasks for you that’ll get you clued in."
+        },
+        {
+            "id": "3",
+            "url": "/Home",
+            "linktext": "LET’S GET STARTED",
+            "heading": "You're here!",
+            "indextext": "Now that the obvious is out of the way, let’s help you get to know your new  home here at 22feet We’ve designed a few tasks for you that’ll get you clued in."
+        }
+    ]
+}
