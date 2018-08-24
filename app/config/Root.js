@@ -1,8 +1,9 @@
 
 
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, withRouter, Switch, } from 'react-router-dom';
 import content from '../data/data.json';
+import values from '../data/services.json';
 import Home from '../components/Home.js';
 import Login from '../components/Login/Login.js';
 import Taskone from '../components/Taskone/Taskone.js';
@@ -22,32 +23,48 @@ const history = createBrowserHistory();
 
 window.React = React;
 
-const Root = () => {
+/* loading api */
+/* 
+fetch('https://reqres.in/api/unknown/2')
+	.then(response => response.json())
+	.then(json => console.log(json));
+ */
+//console.log(json);
 
-	var levels = content.posts.map((i) => {
 
-		let currentId = i.id;
+const Root = (props) => {
 
-		switch (currentId) {
-			case "1":
-				console.log("case 1");
+	let maincontent, home, login = "";
+
+	let levels = content.posts.map((i) => {
+
+		let currentId = i.content;
+
+		switch (currentId.id) {
+			case 1:
+				maincontent = currentId;
+				home = maincontent;
 				break;
-			case "2":
-				console.log("case 2");
+			case 2:
+				maincontent = currentId;
+				home = maincontent;
 				break;
-			case "3":
-				console.log("case 3");
+			case 3:
+				maincontent = currentId;
+				login = maincontent;
 				break;
 		}
 
+		return maincontent;
 	});
+
 
 
 	return (
 		<Router history={history}>
 			<div>
-				<Route path="/" component={Home} exact />
-				<Route path="/Login" component={Login} />
+				<Route path="/" component={() => <Home contents={home} />} exact />
+				<Route path="/Login" component={() => <Login contents={login} />} />
 				<Route path="/Taskone" component={Taskone} />
 				<Route path="/Knowoffice" component={Knowoffice} />
 				<Route path="/Questionslider" component={Questionslider} />
@@ -61,6 +78,7 @@ const Root = () => {
 		</Router>
 	);
 };
+
 
 export default Root;
 
